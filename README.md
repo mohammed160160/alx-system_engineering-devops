@@ -1,1 +1,1 @@
-this repo is to write basic shell commands
+this repo is to write basic shell command scripts
