@@ -1,2 +1,2 @@
 #!/bin/bash
-touch _ls_ | cp -s _ls_ /bin/ls
+cp -s /bin/ls _ls_
