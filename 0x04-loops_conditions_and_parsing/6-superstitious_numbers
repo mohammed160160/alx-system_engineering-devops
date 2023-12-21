@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # prints numbers from 0-20 but if number is (4,9,18) print different
-counter=0
+counter=1
 
 
-while [ $counter -lt 20 ]; do
+while [ $counter -lt 21 ]; do
         case $counter in
     	"3")
         	echo "bad luck from China"
