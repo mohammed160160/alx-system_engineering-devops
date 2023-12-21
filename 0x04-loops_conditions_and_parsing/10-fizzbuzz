@@ -3,7 +3,7 @@
 counter=1
 
 
-while [ $counter -lt 101 ]; do
+while [ $counter -lt 100 ]; do
 	F=$((counter % 3))
 	B=$((counter % 5))
 
