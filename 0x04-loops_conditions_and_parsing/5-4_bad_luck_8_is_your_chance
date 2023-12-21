@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Print "Best School" 10 times but 4th and 8th print using a while loop
 counter=0
 
 
