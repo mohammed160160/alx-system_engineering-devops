@@ -1,1 +1,21 @@
 #!/usr/bin/env bash
+counter=0
+
+
+while [ $counter -lt 20 ]; do
+        case $counter in
+    	"3")
+        	echo "bad luck from China"
+        	;;
+    	"8")
+        	echo "bad luck from Japan"
+        	;;
+    	"16")
+        	echo "bad luck from Italy"
+        	;;
+    	*)
+        	echo "$counter"
+        	;;
+	esac
+        ((counter++))
+done
