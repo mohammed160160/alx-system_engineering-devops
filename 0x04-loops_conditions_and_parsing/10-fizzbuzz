@@ -1,1 +1,21 @@
 #!/usr/bin/env bash
+# The fizzbuzz experiment
+counter=1
+
+
+while [ $counter -lt 101 ]; do
+	F=$((counter % 3))
+	B=$((counter % 5))
+
+	if [ $F -eq 0 ] && [ $B -eq 0 ]; then
+		echo "FizzBuzz"
+	elif [ $F -eq 0 ]; then
+		echo "Fizz"
+	elif [ $B -eq 0 ]; then
+		echo "Buff"
+	else
+		echo "$counter"
+	fi
+
+	((counter++))
+done
