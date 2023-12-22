@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# displays a line and if an SIGTERM send sends another line
+
+runningfile="/var/run/my_process.pid"
+Tempfile="/tmp/my_process"
+
+start(){
+	./manage_my_process > "$Tempfile" 2>&1 &
+	echo $! > "$runningfile"
+	echo "manage_my_process started"
+	}
+
+stop(){
+	pidvalue=$(cat "$runningfile")
+	kill "$pidvalue"
+	rm -f "$runningfile"
+	echo "manage_my_process stopped"
+	}
+
+restart(){
+	stop
+	start
+	echo "manage_my_process restarted"
+	}
+
+case "$1" in
+	start)
+		start
+		;;
+	stop)
+		stop
+		;;
+	restart)
+		restart
+		;;
+	*)
+		echo "Usage: $0 {start|stop|restart}"
+        	exit 1
+		;;
+esac

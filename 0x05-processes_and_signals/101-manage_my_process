@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# displays a line and if an SIGTERM send sends another line
+
+if [ "$#" -eq 1 ]; then
+    sudo ./manage_my_process "$1"
+else
+    echo "Usage: $0 {start|stop|restart}"
+    exit 1
+fi
