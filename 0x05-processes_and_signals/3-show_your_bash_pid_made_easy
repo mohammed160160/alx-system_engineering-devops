@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # displays the PID and process name whose contain the word bash.
 pgrep -l bash | while read -r pid pname; do
-	echo "$pid   $pname"
+	echo "$pid	$pname"
 done
