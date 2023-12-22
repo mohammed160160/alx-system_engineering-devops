@@ -1,2 +1,13 @@
 #!/usr/bin/env bash
-# This is what the code does
+# displays a line and if an SIGTERM send sends another line
+
+cleanup() {
+	echo "I am invincible!!!"
+}
+
+trap cleanup SIGTERM
+
+while true; do
+        echo "To infinity and beyond"
+        sleep 2
+done
