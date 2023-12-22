@@ -1,2 +1,7 @@
 #!/usr/bin/env bash
-# This is what the code does
+# Stops the script 4-to_infinity_and_beyond by kill
+Script_id=$(pgrep -f "4-to_infinity_and_beyond")
+
+if [ -n "$Script_id" ]; then 
+	kill -15 "$Script_id"
+fi
