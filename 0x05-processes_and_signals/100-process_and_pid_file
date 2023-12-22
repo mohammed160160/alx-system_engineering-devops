@@ -2,6 +2,7 @@
 # displays a line and if an SIGTERM send sends another line
 
 pid_file="/var/run/myscript.pid"
+echo $$ > "$pid_file"
 
 intsig() {
         echo "Y U no love me?!"
@@ -9,20 +10,18 @@ intsig() {
 
 termsig() {
         echo "I hate the kill command"
-	rm -f "pid_file"
+	rm -f "$pid_file"
 	exit 0
 }
 
 quitsig() {
-	rm -f "pid_file"
+	rm -f "$pid_file"
 	exit 0
 }
 
 trap termsig SIGTERM
 trap intsig SIGINT
 trap quitsig SIGQUIT
-
-echo $$ > "$pid_file"
 
 while true; do
         echo "To infinity and beyond"
