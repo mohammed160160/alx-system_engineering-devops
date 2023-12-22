@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # displays the PID and process name whose contain the word bash.
-pgrep -l bash | awk -v script_pid="$script_pid" '$1 != script_pid {print $1, $2}'
+self_pid=$$
+pgrep -l bash | awk -v script_pid="self_pid" '$1 != script_pid {print $1, $2}'
