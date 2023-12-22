@@ -1,7 +1,3 @@
 #!/usr/bin/env bash
 # Stops the script 4-to_infinity_and_beyond without using kill
-Script_id=$(pgrep -f "4-to_infinity_and_beyond")
-
-if [ -n "$Script_id" ]; then
-        pkill -TERM -P "$process_pid"
-fi
+pkill -f 4-to_infinity_and_beyond
