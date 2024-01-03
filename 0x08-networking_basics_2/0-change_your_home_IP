@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
+# cofigurates localhost to 127.0.0.2 and facebook.com to 8.8.8.8
 
-# Define the desired IP address mappings
-local_mapping="127.0.0.2 localhost"
-facebook_mapping="8.8.8.8 facebook.com"
+local_mapping="127.0.0.2	localhost"
+facebook_mapping="8.8.8.8	facebook.com"
 
-# Update the hosts file with the desired mappings
 echo -e "$local_mapping\n$facebook_mapping" > /etc/hosts
