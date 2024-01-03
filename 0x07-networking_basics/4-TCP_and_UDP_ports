@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-netstat -tuln | grep 'LISTEN'
+#Checks for open TCP and UDP ports
+netstat -l --program
