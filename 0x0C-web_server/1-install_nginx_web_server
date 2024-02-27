@@ -5,11 +5,12 @@ apt-get update
 
 apt-get install -y nginx
 
+echo "Hello World!" > ~/etc/nginx/html/hello.html
+
 echo "server {
     listen 80;
-    server_name ubuntu@100.26.159.135;
-
-    location / {
-        return 200 'Hello World!';
+    listen [::]80 default_server;
+    root ~/etc/nginx/html;
+    index hello.html
     }
 }" > /etc/nginx/sites-available/default
