@@ -14,3 +14,5 @@ echo "server {
     index hello.html
     }
 }" > /etc/nginx/sites-available/default
+
+service nginx restart
