@@ -1,2 +1,19 @@
 #!/usr/bin/env bash
-#
+# Runs a nginx in the server
+
+sudo apt-get update
+sudo apt-get install -y nginx
+sudo service nginx start
+
+sudo mkdir -p /etc/nginx/html
+
+echo "Hello World!" | sudo tee /etc/nginx/html/index.html
+
+printf %s "server{
+listen 80;
+listen [::]:80 default_server;
+root /etc/nginx/html;
+index index.html;
+}" | sudo tee /etc/nginx/sites-available/default
+
+sudo service nginx restart
