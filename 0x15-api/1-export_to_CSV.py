@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """THIS IS A DESCRIPTION"""
 
+import csv
 import requests
 import sys
-import csv
+
 
 if __name__ == "__main__":
     ID = int(sys.argv[1])
@@ -13,7 +14,7 @@ if __name__ == "__main__":
     user_info = requests.get(url).json()
     todos_info = requests.get(url_todos).json()
 
-    Name = user_info.get("name")
+    Name = user_info.get("username")
 
     filename = "{}.csv".format(ID)
     with open(filename, mode='w', newline='') as file:
