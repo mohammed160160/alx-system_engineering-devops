@@ -10,7 +10,7 @@ if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com"
     users_url = url + '/users'
 
-    user_info = requests.get(users_url).json
+    user_info = requests.get(users_url).json()
 
     All_user_data = {}
 
