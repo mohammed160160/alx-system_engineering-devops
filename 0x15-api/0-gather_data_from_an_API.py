@@ -13,14 +13,12 @@ if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(ID)
     Responce = requests.get(url)
 
-    if Responce.status_code == 200:
-        to_do = response.json()
-        name = to_do[0]['username']
-        done_tasks = [td for td in to_do if td['completed']]
-        t_num = len(to_do)
-        d_num = len(done_tasks)
+    to_do = response.json()
+    name = to_do[0]['username']
+    done_tasks = [td for td in to_do if td['completed']]
+    t_num = len(to_do)
+    d_num = len(done_tasks)
+    print("Employee {} is done with tasks({}/{})".format(name, dnum, tnum))
 
-        print("Employee {} is done with tasks({}/{})".format(name, dnum, tnum)
-        
-        for task in done_tasks:
-            print("\t{}".format(task['title'])
+    for taskname in done_tasks:
+        print("\t{}".format(taskname['title']))
