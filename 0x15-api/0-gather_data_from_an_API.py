@@ -6,7 +6,7 @@ import sys
 
 if __name__ == "__main__":
     ID = int(sys.argv[1])
-    url = "https://jsonplaceholder.typicode.com/users/{}/".format(ID)
+    url = "https://jsonplaceholder.typicode.com/users/{}".format(ID)
     url_todos = url + '/todos'
 
     user_info = requests.get(url).json()
