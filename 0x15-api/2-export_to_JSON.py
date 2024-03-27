@@ -15,15 +15,15 @@ if __name__ == "__main__":
     todos_info = requests.get(url_todos).json()
 
     Name = user_info.get("username")
-    
+
     User_Data = {
-        ID:[
-        {
-            "task": t.get("title"),
-            "completed": t.get("completed"),
-            "username": Name
-        }
-        for t in todos_info
+        ID: [
+            {
+                "task": t.get("title"),
+                "completed": t.get("completed"),
+                "username": Name
+            }
+            for t in todos_info
         ]
     }
 
