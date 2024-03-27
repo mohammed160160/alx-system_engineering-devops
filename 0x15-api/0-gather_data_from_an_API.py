@@ -10,10 +10,10 @@ if __name__ == "__main__":
         sys.exit(1)
 
     ID = int(sys.argv[1])
-    url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(ID)
-    Responce = requests.get(url)
+    url = "https://jsonplaceholder.typicode.com/users/{}/todos/".format(ID)
+    REQUEST = requests.get(url)
+    to_do = REQUEST.json()
 
-    to_do = response.json()
     name = to_do[0]['username']
     done_tasks = [td for td in to_do if td['completed']]
     t_num = len(to_do)
