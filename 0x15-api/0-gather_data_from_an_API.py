@@ -14,7 +14,7 @@ if __name__ == "__main__":
     REQUEST = requests.get(url)
     to_do = REQUEST.json()
 
-    name = to_do[0]['username']
+    name = to_do[0]['name']
     done_tasks = [td for td in to_do if td['completed']]
     t_num = len(to_do)
     d_num = len(done_tasks)
