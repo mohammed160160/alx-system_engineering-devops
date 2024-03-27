@@ -19,14 +19,14 @@ if __name__ == "__main__":
     User_Data = {
         ID:[
         {
-            "task": t.get("title")
-            "completed": t.get("completed")
+            "task": t.get("title"),
+            "completed": t.get("completed"),
             "username": Name
         }
         for t in todos_info
         ]
     }
 
-    FileName = "{}.json".format(user_id)
-    with open(FileName, "w") as jsonfile:
+    filename = "{}.json".format(ID)
+    with open(filename, "w") as jsonfile:
         json.dump(User_Data, jsonfile, indent=4)
