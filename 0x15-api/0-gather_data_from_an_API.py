@@ -7,16 +7,16 @@ import sys
 if __name__ == "__main__":
     ID = int(sys.argv[1])
     url = "https://jsonplaceholder.typicode.com/users/{}".format(ID)
+    url_todos = url + "/todos"
+
     user_info = request.get(url).json()
-    INFO = {"userID": ID}
+    todos_info = request.get(url_todos).json()
 
-    url += "/todos"
-    TODO = requests.get(url, INFO).json()
-
-    DoneTasks = [t.get("title") for t in TODO if t.get("completed") is TRUE]
     Name = user_info.get("name")
+    DoneTasks = [t.get("title") for t in todos_info if t.get("completed")]
+
     Done = len(DoneTasks)
-    Tasks = len(TODO)
+    Tasks = len(todos_info)
 
     print("Employee {} is done with tasks({}/{}):".format(Name, Done, Tasks))
 
