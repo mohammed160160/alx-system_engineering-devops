@@ -21,4 +21,4 @@ if __name__ == "__main__":
     print("Employee {} is done with tasks({}/{}):".format(Name, Done, Tasks))
 
     for element in DoneTasks:
-        print("\t{}".format(element))
+        print("\t {}".format(element))
