@@ -6,11 +6,11 @@ import sys
 
 if __name__ == "__main__":
     ID = int(sys.argv[1])
-    url = "https://jsonplaceholder.typicode.com/users/{}".format(ID)
-    url_todos = url + "/todos"
+    url = "https://jsonplaceholder.typicode.com/users/{}/".format(ID)
+    url_todos = url + '/todos'
 
-    user_info = request.get(url).json()
-    todos_info = request.get(url_todos).json()
+    user_info = requests.get(url).json()
+    todos_info = requests.get(url_todos).json()
 
     Name = user_info.get("name")
     DoneTasks = [t.get("title") for t in todos_info if t.get("completed")]
