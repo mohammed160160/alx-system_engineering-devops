@@ -5,20 +5,20 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python script.py <employee_id>")
-        sys.exit(1)
-
     ID = int(sys.argv[1])
-    url = "https://jsonplaceholder.typicode.com/users/{}/todos/".format(ID)
-    REQUEST = requests.get(url)
-    to_do = REQUEST.json()
+    url = "https://jsonplaceholder.typicode.com/users/{}".format(ID)
+    user_info = request.get(url).json()
+    INFO = {"userID": ID}
 
-    name = to_do[0]['name']
-    done_tasks = [td for td in to_do if td['completed']]
-    t_num = len(to_do)
-    d_num = len(done_tasks)
-    print("Employee {} is done with tasks({}/{})".format(name, dnum, tnum))
+    url += "/todos"
+    TODO = requests.get(url, INFO).json()
 
-    for taskname in done_tasks:
-        print("\t{}".format(taskname['title']))
+    DoneTasks = [t.get("title") for t in TODO if t.get("completed") is TRUE]
+    Name = user_info.get("name")
+    Done = len(DoneTasks)
+    Tasks = len(TODO)
+
+    print("Employee {} is done with tasks({}/{}):".format(Name, Done, Tasks))
+
+    for element in DoneTasks:
+        print("\t{}".format(element))
