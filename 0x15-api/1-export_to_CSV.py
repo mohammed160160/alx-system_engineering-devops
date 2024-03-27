@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     filename = "{}.csv".format(ID)
     with open(filename, mode='w', newline='') as file:
-        writer = csv.writer(file)
+        writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         for t in todos_info:
             comp_status = t.get("completed")
             writer.writerow([ID, Name, comp_status, t.get("title")])
