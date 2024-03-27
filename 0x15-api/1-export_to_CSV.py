@@ -20,5 +20,5 @@ if __name__ == "__main__":
     with open(filename, mode='w', newline='') as file:
         writer = csv.writer(file)
         for t in todos_info:
-            comp_status = "Completed" if t.get("completed") else "Incomplete"
+            comp_status = t.get("completed")
             writer.writerow([ID, Name, comp_status, t.get("title")])
